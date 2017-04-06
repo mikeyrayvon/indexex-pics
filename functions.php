@@ -66,6 +66,7 @@ get_template_part( 'lib/custom-gallery' );
 get_template_part( 'lib/post-types' );
 get_template_part( 'lib/meta-boxes' );
 get_template_part( 'lib/theme-options/theme-options' );
+get_template_part( 'lib/custom-tax' );
 
 // Add custom functions
 
