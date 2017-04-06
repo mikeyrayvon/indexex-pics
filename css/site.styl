@@ -55,6 +55,32 @@ img
 .desktop-only
   display: none !important
 
+input
+  appearance: none
+  border-style: solid
+
+#search-text-input
+  width: 100%
+
+.expo-details
+  p:last-of-type
+    margin-bottom: 0
+
+.artist-list
+  li
+    display: inline-block
+  li:not(:last-of-type)
+    &:after
+      content: ',\00a0'
+
+#map-holder
+  background-color: $color-brown
+  iframe
+    width: 100%
+    height: 100%
+    filter: saturate(0)
+    mix-blend-mode: multiply
+
 // ******************************************************
 
 // MEDIA QUERIES
@@ -65,19 +91,16 @@ $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
 $margin-small = ($gutter)
 $margin-basic = ($gutter * 2)
-$margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 12px
-$font-size-h1 = 28px
-$font-size-h2 = 21px
-$font-size-h3 = 16px
+$font-size-basic = 16px
+$font-size-large = 27px
 
 grid(96%, $gutter, s)
 
-space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
+space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, false, $margin-large)
 
-font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
+font-sizes($font-size-basic, $font-size-large)
 
 @import 'responsive/mobile'
 
@@ -89,16 +112,16 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   $margin-tiny = ($gutter / 2)
   $margin-small = ($gutter)
   $margin-basic = ($gutter * 2)
-  $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
 
-  $font-size-basic = 14px
+  $font-size-basic = 19px
+  $font-size-large = 30px
 
-  space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
+  space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, false, $margin-large)
 
   grid(680px, $gutter, m)
 
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, $font-size-large)
 
   .mobile-only
     display: none !important
@@ -113,34 +136,41 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   $margin-tiny = ($gutter / 2)
   $margin-small = ($gutter)
   $margin-basic = ($gutter * 2)
-  $margin-mid = ($gutter * 3.5)
-  $margin-large = ($gutter * 5)
+  $margin-large = ($gutter * 3.5)
 
-  $font-size-basic = 16px
+  $font-size-basic = 21px
+  $font-size-large = 32px
+
+  space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, false, $margin-large)
 
   grid(1000px, $gutter, l)
 
-  space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
-
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, $font-size-large)
 
   .desktop-only
     display: initial !important
 
-  @import 'responsive/desktop'
+  @import 'responsive/laptop'
 
 @media screen and (min-width: 1280px)
 
+  $gutter = 24px
+
+  $margin-large = ($gutter * 5)
+
+  space-maker(false, false, false, false, false, $margin-large)
+
+  $font-size-basic = 24px
+  $font-size-large = 36px
+
+  font-sizes($font-size-basic, $font-size-large)
+
   grid(1200px)
 
-@media screen and (min-width: 1366px)
+  @import 'responsive/desktop'
 
-  grid(1300px)
+@media screen and (min-width: 1480px)
 
-@media screen and (min-width: 1680px)
+  grid(1400px)
 
-  grid(1600px)
-
-@media screen and (min-width: 1920px)
-
-  grid(1800px)
+  @import 'responsive/hd'
