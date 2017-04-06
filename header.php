@@ -27,12 +27,29 @@
 
 <section id="main-container">
 
-  <header id="header" class="container">
-    <div class="grid-row">
-      <div class="grid-item item-s-10 item-m-4 item-l-6">
-        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+<?php
+if (qtranxf_getLanguage() == 'es') {
+  $lang_switch = is_404() ? home_url() : qtranxf_convertURL('', 'en', false, true);
+} else {
+  $lang_switch = is_404() ? home_url() : qtranxf_convertURL('', 'es', false, true);
+}
+?>
+
+  <header id="header" class="container margin-top-small margin-bottom-large">
+    <nav id="main-nav" class="grid-row align-items-start">
+      <div class="grid-item item-s-8 item-l-6 margin-bottom-small">
+        <h1><a href="<?php echo home_url(); ?>" title="<?php _e('[:es]Mi nombre[:en]My name[:]'); ?>"><?php bloginfo('name'); ?></a></h1>
       </div>
-      <div class="grid-item item-s-12 item-m-7 item-l-5">
+      <div id="header-search-holder" class="grid-item item-s-12 item-l-4 margin-top-micro no-gutter">
         <?php get_search_form(true); ?>
       </div>
+      <div class="grid-item item-s-4 item-l-2 no-gutter grid-row text-align-right font-size-large">
+        <div class="grid-item item-s-12 item-l-8">
+          <a href="<?php echo $lang_switch; ?>" title="<?php _e('[:es]English[:en]Español[:]'); ?>"><?php _e('[:es]Eng[:en]Esp'); ?></a>
+        </div>
+        <div class="grid-item item-s-12 item-l-4">
+          <a href="<?php echo home_url('/info'); ?>" title="<?php _e('[:es]Quien soy?[:en]Who am I?[:]'); ?>">?</a>
+        </div>
+      </div>
+    </nav>
   </header>
