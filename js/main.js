@@ -48,7 +48,7 @@ Site.Post = {
   },
 
   sizeIframes: function() {
-    $('.post iframe').each(function() {
+    $('#documentation iframe').each(function() {
       $(this).height(($(this).width() / 16) * 9);
     });
   }

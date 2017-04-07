@@ -56,7 +56,7 @@ if( have_posts() ) {
 <?php
       if (!empty($docu)) {
 ?>
-          <div class="grid-item item-s-12 item-l-8 margin-bottom-basic">
+          <div id="documentation" class="grid-item item-s-12 item-l-8 margin-bottom-basic">
             <?php echo apply_filters('the_content', $docu); ?>
           </div>
 <?php
