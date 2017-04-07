@@ -39,9 +39,24 @@ if (is_home()) {
   <meta property="og:type" content="website" />
 <?php
 } else if (is_single()) {
-  if (has_excerpt($post)) {
+  $excerpt = '';
+
+  if (has_term('', 'artist', $post)) {
+    
+    $artists = get_the_terms($post, 'artist');
+
+    foreach($artists as $artist) {
+      $excerpt .= $artist->name . ', ';
+    }
+
+    $excerpt = rtrim($excerpt,', ');
+
+  } else if (has_excerpt($post)) {
+
     $excerpt = get_the_excerpt($post);
+
   } else {
+
     global $post;
     // trim post content by 600 chars
     $excerpt = substr($post->post_content, 0, 600);
@@ -51,7 +66,8 @@ if (is_home()) {
     $excerpt = $excerpt . '...';
     // clean special cars
     $excerpt = htmlspecialchars($excerpt);
-  } 
+
+  }
 ?>
   <meta property="og:url" content="<?php the_permalink(); ?>"/>
   <meta property="og:description" content="<?php echo $excerpt; ?>" />
