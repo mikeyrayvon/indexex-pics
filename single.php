@@ -35,7 +35,7 @@ if( have_posts() ) {
 
 ?>
 
-        <article <?php post_class('grid-item item-s-12 no-gutter grid-row'); ?> id="post-<?php the_ID(); ?>">
+        <article <?php post_class('grid-item item-s-12 no-gutter grid-row margin-bottom-basic'); ?> id="post-<?php the_ID(); ?>">
           <div class="expo-details grid-item item-s-12 item-m-7 item-l-6 margin-bottom-basic">
             <h1 class="margin-bottom-basic"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
             <?php if (!empty($artists)) {
