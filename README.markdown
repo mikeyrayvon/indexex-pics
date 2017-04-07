@@ -1,10 +1,7 @@
-globie-wordpress-starter-pack
+indexex-site
 ---
-v 1.7.6
 
-Starting point for our wordpress themes
-
-`git clone git@github.com:interglobalvision/globie-wordpress-starter-pack.git`
+Wordpress theme for (Índice de Exposiciones Exteriores)[http://indexex.site/]
 
 Tech this uses [thnx]:
 
