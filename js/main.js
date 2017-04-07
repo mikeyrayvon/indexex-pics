@@ -13,7 +13,7 @@ Site = {
     $(document).ready(function () {
       $('#donate').click(function(event) {
         event.preventDefault();
-        
+
         $('#donation-form').submit()
       });
     });
@@ -23,6 +23,9 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    if ($('.post iframe').length) {
+      Site.Post.sizeIframes();
+    }
   },
 
   fixWidows: function() {
@@ -34,5 +37,21 @@ Site = {
     });
   },
 };
+
+Site.Post = {
+  init: function() {
+    var _this = this;
+
+    if ($('.post iframe').length) {
+      _this.sizeIframes();
+    }
+  },
+
+  sizeIframes: function() {
+    $('.post iframe').each(function() {
+      $(this).height(($(this).width() / 16) * 9);
+    });
+  }
+}
 
 Site.init();
