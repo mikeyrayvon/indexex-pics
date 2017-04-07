@@ -39,15 +39,21 @@ if (is_home()) {
   <meta property="og:type" content="website" />
 <?php
 } else if (is_single()) {
-  global $post;
-  // trim post content by 600 chars
-  $excerpt = substr($post->post_content, 0, 600);
-  // strip html tags
-  $excerpt = strip_tags($excerpt);
-  // add ... to end
-  $excerpt = $excerpt . '...';
-  // clean special cars
-  $excerpt = htmlspecialchars($excerpt);
+  if (has_excerpt()) {
+    $excerpt = get_the_excerpt();
+  } else {
+    global $post;
+    // trim post content by 600 chars
+    $excerpt = substr($post->post_content, 0, 600);
+    // strip html tags
+    $excerpt = strip_tags($excerpt);
+    // add ... to end
+    $excerpt = $excerpt . '...';
+    // clean special cars
+    $excerpt = htmlspecialchars($excerpt);
+  }
+}
+
 ?>
   <meta property="og:url" content="<?php the_permalink(); ?>"/>
   <meta property="og:description" content="<?php echo $excerpt; ?>" />
