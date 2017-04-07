@@ -20,7 +20,7 @@ if( have_posts() ) {
           <?php the_content(); ?>
           <p><?php _e('[:es]Tengo un total de ' . $post_count . ' exposiciones.[:en]I have a total of ' . $post_count . ' exhibitions.'); ?></p>
         </div>
-        <div class="grid-item item-s-12 item-m-6 item-l-4 offset-l-1">
+        <div class="grid-item item-s-12 item-m-6 item-l-5 offset-l-1">
           <?php
             if (!empty($submit)) {
               echo apply_filters('the_content', $submit);
