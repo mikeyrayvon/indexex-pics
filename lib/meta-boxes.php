@@ -118,5 +118,19 @@ function igv_cmb_metaboxes() {
 		'options' => array( 'textarea_rows' => 10, ),
 	) );
 
+  // NOTICE
+
+  $notice_meta = new_cmb2_box( array(
+    'id'            => $prefix . 'notice_meta',
+    'title'         => esc_html__( 'Notice Meta', 'cmb2' ),
+    'object_types'  => array( 'notice', ),
+ 	) );
+
+  $notice_meta->add_field( array(
+		'name' => esc_html__( 'End Date', 'cmb2' ),
+		'id'   => $prefix . 'notice_end_date',
+		'type' => 'text_date_timestamp',
+	) );
+
 }
 ?>

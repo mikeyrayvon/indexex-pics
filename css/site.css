@@ -804,6 +804,10 @@ input {
           filter: saturate(0);
   mix-blend-mode: multiply;
 }
+#notice {
+  background-color: #fff;
+  color: #000;
+}
 .container {
   width: 96%;
 }

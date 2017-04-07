@@ -28,6 +28,46 @@
 <section id="main-container">
 
 <?php
+if (!is_paged() && !is_single()) {
+$args = array(
+	'post_type'              => array( 'notice' ),
+	'posts_per_page'         => '1',
+);
+$query = new WP_Query( $args );
+
+if ( $query->have_posts() ) {
+	while ( $query->have_posts() ) {
+		$query->the_post();
+
+    $active = true;
+
+    $end_date = get_post_meta($post->ID, '_igv_notice_end_date', true);
+
+    if (!empty($end_date)) {
+      $active = time() > $end_date ? false : true;
+    }
+
+    if ($active) {
+?>
+<div id="notice" class="padding-top-small padding-bottom-tiny">
+  <div class="container">
+    <div class="grid-row">
+      <div class="grid-item item-s-12 item-m-6">
+        <?php the_content(); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<?php
+    }
+	}
+}
+
+wp_reset_postdata();
+}
+?>
+
+<?php
 if (qtranxf_getLanguage() == 'es') {
   $lang_switch = is_404() ? home_url() : qtranxf_convertURL('', 'en', false, true);
 } else {
