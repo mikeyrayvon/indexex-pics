@@ -75,6 +75,7 @@ function igv_cmb_metaboxes() {
 		'id'      => $prefix . 'expo_docu',
 		'type'    => 'wysiwyg',
 		'options' => array( 'textarea_rows' => 10, ),
+    'sanitization_cb' => false,
 	) );
 
   $expo_front_group = $expo_meta->add_field( array(
