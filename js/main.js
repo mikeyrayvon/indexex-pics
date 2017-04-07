@@ -11,7 +11,11 @@ Site = {
     });
 
     $(document).ready(function () {
-
+      $('#donate').click(function(event) {
+        event.preventDefault();
+        
+        $('#donation-form').submit()
+      });
     });
 
   },
