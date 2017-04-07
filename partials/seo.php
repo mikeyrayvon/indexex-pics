@@ -51,7 +51,7 @@ if (is_home()) {
     $excerpt = $excerpt . '...';
     // clean special cars
     $excerpt = htmlspecialchars($excerpt);
-  }
+  } 
 ?>
   <meta property="og:url" content="<?php the_permalink(); ?>"/>
   <meta property="og:description" content="<?php echo $excerpt; ?>" />
