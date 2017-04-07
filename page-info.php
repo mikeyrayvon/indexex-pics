@@ -18,7 +18,7 @@ if( have_posts() ) {
       <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
         <div class="grid-item item-s-12 item-m-8 item-l-5 font-size-large">
           <?php the_content(); ?>
-          <p><?php _e('[:es]Tengo un total de ' . $post_count . 'exposiciones.[:en]I have a total of ' . $post_count . ' exhibitions.'); ?></p>
+          <p><?php _e('[:es]Tengo un total de ' . $post_count . ' exposiciones.[:en]I have a total of ' . $post_count . ' exhibitions.'); ?></p>
         </div>
         <div class="grid-item item-s-12 item-m-6 item-l-4 offset-l-1">
           <?php
