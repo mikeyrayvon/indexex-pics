@@ -39,8 +39,8 @@ if (is_home()) {
   <meta property="og:type" content="website" />
 <?php
 } else if (is_single()) {
-  if (has_excerpt()) {
-    $excerpt = get_the_excerpt();
+  if (has_excerpt($post)) {
+    $excerpt = get_the_excerpt($post);
   } else {
     global $post;
     // trim post content by 600 chars
@@ -52,8 +52,6 @@ if (is_home()) {
     // clean special cars
     $excerpt = htmlspecialchars($excerpt);
   }
-}
-
 ?>
   <meta property="og:url" content="<?php the_permalink(); ?>"/>
   <meta property="og:description" content="<?php echo $excerpt; ?>" />
