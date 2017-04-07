@@ -33,6 +33,16 @@ if( have_posts() ) {
               echo apply_filters('the_content', $donate);
             }
           ?>
+
+          <form id="donation-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_donations">
+            <input type="hidden" name="business" value="TTDMQ3DFLDW7Q">
+            <input type="hidden" name="lc" value="US">
+            <input type="hidden" name="item_name" value="Indice de Exposiciones Exteriores">
+            <input type="hidden" name="currency_code" value="MXN">
+          </form>
+
+
         </div>
 
       </article>
