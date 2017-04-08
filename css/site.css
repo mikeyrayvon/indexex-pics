@@ -801,6 +801,9 @@ iframe {
 .expo-details p:last-of-type {
   margin-bottom: 0;
 }
+.artist-list {
+  margin-left: 0;
+}
 .artist-list li {
   display: inline-block;
 }

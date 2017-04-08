@@ -39,11 +39,11 @@ if( have_posts() ) {
           <div class="expo-details grid-item item-s-12 item-m-7 item-l-6 margin-bottom-basic">
             <h1 class="margin-bottom-basic"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
             <?php if (!empty($artists)) {
-              echo '<p><ul class="artist-list">';
+              echo '<ul class="artist-list">';
               foreach($artists as $artist) {
                 echo '<li>' . $artist->name . '</li>';
               }
-              echo '</ul></p>';
+              echo '</ul>';
             } ?>
             <?php echo !empty($location) ? apply_filters('the_content', $location) : ''; ?>
             <?php echo !empty($date_open) ? '<p><time>' . $open_str . '</time>' : ''; ?>
