@@ -773,6 +773,14 @@ img {
 .desktop-only {
   display: none !important;
 }
+ul {
+  list-style-type: disc;
+  margin-left: 1em;
+}
+ul {
+  list-style-type: decimal;
+  margin-left: 1em;
+}
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
