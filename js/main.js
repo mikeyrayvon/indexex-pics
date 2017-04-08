@@ -66,7 +66,7 @@ Site.Info = {
   getWeather: function() {
     var _this = this;
     var key = '3c886412f00a85f921c56833793af3b9';
-    var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Mexico&lang=' + currentLang + '&appid=' + key;
+    var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=MexicoCity&lang=' + currentLang + '&appid=' + key;
 
     $.getJSON(weatherUrl)
     .done(function(data) {
