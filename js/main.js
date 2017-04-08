@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, jQuery, document, Site, Modernizr, currentLang */
 
 Site = {
   mobileThreshold: 601,
@@ -11,11 +11,9 @@ Site = {
     });
 
     $(document).ready(function () {
-      $('#donate').click(function(event) {
-        event.preventDefault();
-
-        $('#donation-form').submit()
-      });
+      if ($('body').hasClass('page-info')) {
+        _this.Info.init();
+      }
     });
 
   },
@@ -52,6 +50,52 @@ Site.Post = {
       $(this).height(($(this).width() / 16) * 9);
     });
   }
-}
+};
+
+Site.Info = {
+  init: function() {
+    var _this = this;
+
+    if ($('#donation-form').length && $('#donate').length) {
+      _this.bindDonate();
+    }
+
+    _this.getWeather();
+  },
+
+  getWeather: function() {
+    var _this = this;
+    var key = '3c886412f00a85f921c56833793af3b9';
+    var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Mexico&lang=' + currentLang + '&appid=' + key;
+
+    $.getJSON(weatherUrl)
+    .done(function(data) {
+      _this.handleWeather(data);
+    })
+    .fail(function() {
+      console.error('No tengo tiempo...');
+    });
+  },
+
+  handleWeather: function(data) {
+    var description = data.weather[0].description;
+
+    if (currentLang === 'en') {
+      var weather = '<p>I see ' + description + ' in the sky.</p>';
+    } else {
+      var weather = '<p>Veo ' + description + ' en el cielo.</p>';
+    }
+
+    $('#weather').html(weather);
+  },
+
+  bindDonate: function() {
+    $('#donate').click(function(event) {
+      event.preventDefault();
+
+      $('#donation-form').submit()
+    });
+  },
+};
 
 Site.init();
