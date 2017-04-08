@@ -80,10 +80,10 @@ Site.Info = {
   handleWeather: function(data) {
     var description = data.weather[0].description;
 
-    if (currentLang === 'en') {
-      var weather = '<p>I see ' + description + ' in the sky.</p>';
+    if (currentLang == 'en') {
+      var weather = '<p>I see ' + description + '.</p>';
     } else {
-      var weather = '<p>Veo ' + description + ' en el cielo.</p>';
+      var weather = '<p>Veo ' + description + '.</p>';
     }
 
     $('#weather').html(weather);
