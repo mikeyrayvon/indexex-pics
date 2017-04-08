@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "lazysizes": "^2.0.4",
-    "simpleWeather": "^3.1.0"
+    "lazysizes": "^2.0.4"
   }
 }
