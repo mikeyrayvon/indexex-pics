@@ -709,8 +709,18 @@ h5,
 h6 {
   margin: 0;
 }
-p {
+p,
+ul,
+ol {
   margin-bottom: 1rem;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+}
+ol {
+  list-style-type: decimal;
+  margin-left: 1rem;
 }
 .font-sans {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -772,14 +782,6 @@ img {
 }
 .desktop-only {
   display: none !important;
-}
-ul {
-  list-style-type: disc;
-  margin-left: 1em;
-}
-ol {
-  list-style-type: decimal;
-  margin-left: 1em;
 }
 input {
   -webkit-appearance: none;
