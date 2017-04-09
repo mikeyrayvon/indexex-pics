@@ -12,23 +12,27 @@ if( have_posts() ) {
     the_post();
 
     $post_count = wp_count_posts()->publish;
+    $friends_url = home_url('/amigos');
     $donate = get_post_meta($post->ID, '_igv_info_donate', true);
     $submit = get_post_meta($post->ID, '_igv_info_submit', true);
 ?>
       <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
-        <div class="grid-item item-s-12 item-m-8 item-l-5 font-size-large">
+        <div class="grid-item item-s-12 item-m-8 item-l-5 font-size-large margin-bottom-basic">
           <?php the_content(); ?>
           <p><?php _e('[:es]Tengo un total de ' . $post_count . ' exposiciones.[:en]I have a total of ' . $post_count . ' exhibitions.'); ?></p>
           <div id="weather"></div>
+          <?php /*
+          <p><?php _e('[:es]Y tengo <a href="' . $friends_url . '">amigos</a> maravillosos.[:en]And I have wonderful <a href="' . $friends_url . '">friends</a>.'); ?></p>
+          */ ?>
         </div>
-        <div class="grid-item item-s-12 item-m-6 item-l-5 offset-l-1">
+        <div class="grid-item item-s-12 item-m-6 item-l-5 offset-l-1 margin-bottom-basic">
           <?php
             if (!empty($submit)) {
               echo apply_filters('the_content', $submit);
             }
           ?>
         </div>
-        <div class="grid-item item-s-12 item-m-6 item-l-4">
+        <div class="grid-item item-s-12 item-m-6 item-l-4 margin-bottom-basic">
           <?php
             if (!empty($donate)) {
               echo apply_filters('the_content', $donate);
