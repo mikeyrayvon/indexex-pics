@@ -12,10 +12,16 @@
   ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-  <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.png">
-  <link rel="shortcut" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.ico">
-  <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon-touch.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/path/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="<?php bloginfo('stylesheet_directory'); ?>/manifest.json">
+  <link rel="mask-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/safari-pinned-tab.svg" color="#d1bba7">
+  <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="indexex.site">
+  <meta name="application-name" content="indexex.site">
+  <meta name="msapplication-config" content="<?php bloginfo('stylesheet_directory'); ?>/browserconfig.xml">
+  <meta name="theme-color" content="#d1bba7">
 
   <?php if (is_singular() && pings_open(get_queried_object())) { ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">

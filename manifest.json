@@ -1,0 +1,14 @@
+{
+    "name": "indexex.site",
+    "icons": [
+        {
+            "src": "/path/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#d1bba7",
+    "background_color": "#d1bba7",
+    "start_url": "http://indexex.site",
+    "display": "standalone"
+}
