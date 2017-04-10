@@ -810,6 +810,14 @@ iframe {
 .artist-list li:not(:last-of-type):after {
   content: ',\00a0';
 }
+#searchform {
+  background-color: #d1bba7;
+}
+#searchform input {
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+  mix-blend-mode: multiply;
+}
 #map-holder {
   background-color: #d1bba7;
 }
