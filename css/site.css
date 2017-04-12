@@ -798,7 +798,7 @@ iframe {
 .qtranxs-available-languages-message {
   display: none !important;
 }
-.expo-details p:last-of-type {
+.expo-details > :last-child {
   margin-bottom: 0;
 }
 .artist-list {
