@@ -52,7 +52,7 @@ add_action( 'after_setup_theme', 'clean_site_blog_info' );
 
 function the_title_trim($title) {
 
-	$title = attribute_escape($title);
+	$title = esc_attr($title);
 
 	$findthese = array(
 		'#Privado:#',
