@@ -11,6 +11,9 @@ Site = {
     });
 
     $(document).ready(function () {
+      if ($('body').hasClass('single-post')) {
+        _this.Post.init();
+      }
       if ($('body').hasClass('page-info')) {
         _this.Info.init();
       }
