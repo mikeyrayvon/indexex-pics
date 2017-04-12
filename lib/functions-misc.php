@@ -48,6 +48,27 @@ function clean_site_blog_info() {
 }
 add_action( 'after_setup_theme', 'clean_site_blog_info' );
 
+// Trim "Private: " from titles of Private Posts
+
+function the_title_trim($title) {
+
+	$title = attribute_escape($title);
+
+	$findthese = array(
+		'#Privado:#',
+		'#Private:#'
+	);
+
+	$replacewith = array(
+		'', // What to replace "Protected:" with
+		'' // What to replace "Private:" with
+	);
+
+	$title = preg_replace($findthese, $replacewith, $title);
+	return $title;
+}
+add_filter('the_title', 'the_title_trim');
+
 // custom login logo
 /*
 function custom_login_logo() {
