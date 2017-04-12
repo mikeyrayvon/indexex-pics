@@ -38,11 +38,11 @@ if( have_posts() ) {
             </div>
             <div class="expo-details grid-item item-s-12 item-m-6 item-l-4 margin-bottom-tiny">
               <?php if (!empty($artists)) {
-                echo '<p><ul class="artist-list">';
+                echo '<ul class="artist-list">';
                 foreach($artists as $artist) {
                   echo '<li>' . $artist->name . '</li>';
                 }
-                echo '</ul></p>';
+                echo '</ul>';
               } ?>
               <?php echo !empty($date_open) ? '<p><time>' . $open_str . '</time>' : ''; ?>
               <?php echo !empty($date_close) ? ' - <time>' . $close_str . '</time>' : ''; ?>
