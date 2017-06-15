@@ -37,7 +37,6 @@ if( have_posts() ) {
           <?php
             if (!empty($donate) && $show_donate == 'on') {
               echo apply_filters('the_content', $donate);
-            }
           ?>
 
           <form id="donation-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -46,7 +45,9 @@ if( have_posts() ) {
             ">
           </form>
 
-
+          <?php
+            }
+          ?>
 
         </div>
 
