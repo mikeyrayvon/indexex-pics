@@ -14,6 +14,7 @@ if( have_posts() ) {
     $post_count = wp_count_posts()->publish;
     $friends_url = home_url('/amigos');
     $donate = get_post_meta($post->ID, '_igv_info_donate', true);
+    $show_donate = get_post_meta($post->ID, '_igv_show_donate', true);
     $submit = get_post_meta($post->ID, '_igv_info_submit', true);
 ?>
       <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
@@ -34,7 +35,7 @@ if( have_posts() ) {
         </div>
         <div class="grid-item item-s-12 item-m-6 item-l-4 margin-bottom-basic">
           <?php
-            if (!empty($donate)) {
+            if (!empty($donate) && $show_donate == 'on') {
               echo apply_filters('the_content', $donate);
             }
           ?>
