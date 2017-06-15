@@ -113,6 +113,12 @@ function igv_cmb_metaboxes() {
 	) );
 
   $info_meta->add_field( array(
+		'name'    => esc_html__( 'Show Donate?', 'cmb2' ),
+		'id'      => $prefix . 'show_donate',
+		'type'    => 'checkbox',
+	) );
+
+  $info_meta->add_field( array(
 		'name'    => esc_html__( 'Submit', 'cmb2' ),
 		'id'      => $prefix . 'info_submit',
 		'type'    => 'wysiwyg',
